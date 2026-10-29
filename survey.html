@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Опитування покупців — DigitalSmart</title>
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>DigitalSmart</h1>
+        <p>Магазин сучасної техніки</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Опитування покупців техніки</h2>
+            <div class="survey-container">
+                <form action="submit_survey.php" method="POST" class="survey-form">
+                    <div class="form-group">
+                        <label for="name">Ваше ім’я:</label>
+                        <input type="text" id="name" name="name" required placeholder="Введіть ваше ім'я">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Ваш Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="example@gmail.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="device_type">1. Яку категорію техніки ви найчастіше купуєте?</label>
+                        <select id="device_type" name="device_type" required>
+                            <option value="" disabled selected>Оберіть категорію</option>
+                            <option value="Смартфони">Смартфони</option>
+                            <option value="Ноутбуки">Ноутбуки</option>
+                            <option value="Аксесуари">Аксесуари</option>
+                            <option value="Побутова техніка">Побутова техніка</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>2. Як ви оцінюєте швидкість доставки замовлення?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="delivery_speed" value="Швидко (1-2 дні)" required> Швидко (1-2 дні)</label>
+                            <label class="radio-label"><input type="radio" name="delivery_speed" value="Середньо (3-5 днів)"> Середньо (3-5 днів)</label>
+                            <label class="radio-label"><input type="radio" name="delivery_speed" value="Повільно"> Повільно</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>3. Як ви оцінюєте співвідношення ціни та якості?</label>
+                        <div class="radio-group">
+                            <label class="radio-label"><input type="radio" name="price_quality" value="Відмінне" required> Відмінне</label>
+                            <label class="radio-label"><input type="radio" name="price_quality" value="Добре"> Добре</label>
+                            <label class="radio-label"><input type="radio" name="price_quality" value="Задовільне"> Задовільне</label>
+                            <label class="radio-label"><input type="radio" name="price_quality" value="Незадовільне"> Незадовільне</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="comments">4. Ваші побажання чи зауваження:</label>
+                        <textarea id="comments" name="comments" rows="4" placeholder="Ваш коментар..."></textarea>
+                    </div>
+
+                    <button type="submit">Надіслати відгук</button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <a href="../index.html" class="home-button">🏠 На головну</a>
+</body>
+</html>

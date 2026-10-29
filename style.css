@@ -1,0 +1,595 @@
+/* =========================
+   ЗАГАЛЬНІ СТИЛІ ТА АНІМАЦІЇ
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080d1c;
+    color: #f5f7ff;
+    line-height: 1.6;
+    /* Анімація відповідає за плавний fade-in/ fade-out сторінки */
+    opacity: 0;
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+body.page-ready {
+    /* Анімація відповідає за активує повну видимість сторінки після завантаження */
+    opacity: 1;
+}
+
+body.page-exit {
+    /* Анімація відповідає за плавний вихід зі сторінки перед переходом */
+    opacity: 0;
+    transform: translateY(-6px);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    background: linear-gradient(135deg, #101936, #162552);
+    text-align: center;
+    padding: 40px 20px;
+    border-bottom: 2px solid #00e5ff;
+    box-shadow: 0 0 30px rgba(0, 229, 255, 0.25);
+}
+
+header h1 {
+    margin: 0 0 15px;
+    font-size: 50px;
+    color: #00e5ff;
+    text-shadow: 0 0 15px rgba(0, 229, 255, 0.7);
+}
+
+header p {
+    max-width: 800px;
+    margin: auto;
+    color: #b8c4e0;
+    font-size: 20px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+header nav {
+    margin-top: 25px;
+}
+
+header nav a {
+    display: inline-block;
+    margin: 6px;
+    padding: 10px 15px;
+    color: #ffffff;
+    text-decoration: none;
+    border: 1px solid #26365f;
+    border-radius: 8px;
+    background: #111a35;
+    transition: 0.3s;
+}
+
+header nav a:hover {
+    color: #00e5ff;
+    border-color: #00e5ff;
+    background: #172448;
+    transform: translateY(-3px);
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+section {
+    margin-bottom: 55px;
+}
+
+section h2 {
+    color: #00e5ff;
+    font-size: 30px;
+    border-left: 5px solid #00e5ff;
+    padding-left: 15px;
+    margin-bottom: 25px;
+}
+
+
+/* =========================
+   PRODUCT CARDS
+========================= */
+
+article {
+    background: linear-gradient(145deg, #111a35, #0d1429);
+    border: 1px solid #26365f;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: 0.3s;
+}
+
+article:hover {
+    border-color: #00e5ff;
+    box-shadow: 0 10px 35px rgba(0, 229, 255, 0.18);
+    transform: translateY(-3px);
+}
+
+article p {
+    color: #c3cce2;
+    font-size: 17px;
+}
+
+article strong {
+    color: #ffffff;
+}
+
+
+/* =========================
+   IMAGES
+========================= */
+
+article img {
+    width: 31%;
+    height: 250px;
+    object-fit: cover;
+    margin: 1%;
+    border-radius: 14px;
+    border: 2px solid #26365f;
+    transition: 0.3s;
+}
+
+article img:hover {
+    transform: scale(1.04);
+    border-color: #00e5ff;
+    box-shadow: 0 0 20px rgba(0, 229, 255, 0.35);
+}
+
+
+/* =========================
+   TABLE
+========================= */
+
+table {
+    width: 100%;
+    max-width: 850px;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #0c1328;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th,
+td {
+    border: 1px solid #2b3b66;
+    padding: 14px 18px;
+    text-align: left;
+}
+
+th {
+    color: #00e5ff;
+    background: #14203e;
+}
+
+td {
+    color: #dce5ff;
+}
+
+tr:hover {
+    background: #172448;
+}
+
+
+/* =========================
+   LIST
+========================= */
+
+ul {
+    max-width: 800px;
+    margin: auto;
+    padding: 0;
+    list-style: none;
+}
+
+li {
+    background: #111a35;
+    border: 1px solid #26365f;
+    border-radius: 10px;
+    margin: 10px 0;
+    padding: 14px 20px;
+    color: #dce5ff;
+    transition: 0.3s;
+}
+
+li::before {
+    content: "✓ ";
+    color: #00ffae;
+    font-weight: bold;
+}
+
+li:hover {
+    transform: translateX(7px);
+    border-color: #00e5ff;
+    background: #172448;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.product-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.buy-button,
+.details-button {
+    display: inline-block;
+    padding: 14px 28px;
+    color: white;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.buy-button {
+    background: linear-gradient(135deg, #00b8d9, #0066ff);
+    box-shadow: 0 5px 20px rgba(0, 140, 255, 0.3);
+}
+
+.buy-button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #00e5ff, #0088ff);
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.5);
+}
+
+.details-button {
+    background: linear-gradient(135deg, #7b2cff, #4b00a8);
+    box-shadow: 0 5px 20px rgba(123, 44, 255, 0.3);
+}
+
+.details-button:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #9b55ff, #6414c7);
+    box-shadow: 0 8px 25px rgba(123, 44, 255, 0.5);
+}
+
+
+/* =========================
+   SURVEY FORM STYLES
+========================= */
+
+.survey-container {
+    max-width: 750px;
+    margin: 0 auto;
+    background: linear-gradient(145deg, #111a35, #0d1429);
+    border: 1px solid #26365f;
+    border-radius: 18px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.survey-form .form-group {
+    margin-bottom: 25px;
+}
+
+.survey-form label {
+    display: block;
+    color: #dce5ff;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.survey-form input[type="text"],
+.survey-form input[type="email"],
+.survey-form select,
+.survey-form textarea {
+    width: 100%;
+    padding: 12px 16px;
+    background: #080d1c;
+    border: 1px solid #2b3b66;
+    border-radius: 10px;
+    color: #f5f7ff;
+    font-size: 16px;
+    font-family: inherit;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.survey-form input[type="text"]:focus,
+.survey-form input[type="email"]:focus,
+.survey-form select:focus,
+.survey-form textarea:focus {
+    outline: none;
+    border-color: #00e5ff;
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+    background: #0c1328;
+}
+
+.survey-form .radio-group,
+.survey-form .checkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.survey-form label.radio-label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    color: #c3cce2;
+    cursor: pointer;
+    margin-bottom: 0;
+    transition: color 0.2s;
+}
+
+.survey-form label.radio-label:hover {
+    color: #ffffff;
+}
+
+.survey-form input[type="radio"],
+.survey-form input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #2b3b66;
+    border-radius: 50%;
+    background: #080d1c;
+    margin-right: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.survey-form input[type="checkbox"] {
+    border-radius: 6px;
+}
+
+.survey-form input[type="radio"]:checked,
+.survey-form input[type="checkbox"]:checked {
+    border-color: #00e5ff;
+    background: #00e5ff;
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.survey-form input[type="radio"]:checked::after {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 8px;
+    height: 8px;
+    background: #080d1c;
+    border-radius: 50%;
+}
+
+.survey-form input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    top: -2px;
+    left: 3px;
+    color: #080d1c;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.survey-form button[type="submit"] {
+    display: inline-block;
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #00b8d9, #0066ff);
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(0, 140, 255, 0.3);
+    margin-top: 10px;
+}
+
+.survey-form button[type="submit"]:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #00e5ff, #0088ff);
+    box-shadow: 0 8px 25px rgba(0, 229, 255, 0.5);
+}
+
+.survey-success {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 35px;
+    background: linear-gradient(145deg, #111a35, #0d1429);
+    border: 1px solid #00ffae;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(0, 255, 174, 0.2);
+}
+
+.survey-success h2 {
+    color: #00ffae;
+    margin-top: 0;
+}
+
+.survey-success p {
+    color: #dce5ff;
+    font-size: 18px;
+}
+
+.survey-success .back-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #111a35;
+    border: 1px solid #26365f;
+    border-radius: 8px;
+    color: #ffffff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.survey-success .back-link:hover {
+    border-color: #00e5ff;
+    color: #00e5ff;
+    background: #172448;
+}
+
+
+/* =========================
+   FLOATING HOME BUTTON
+========================= */
+
+.home-button {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 20px;
+    background: linear-gradient(135deg, #00b8d9, #0066ff);
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 30px;
+    border: 2px solid rgba(0, 229, 255, 0.7);
+    box-shadow: 0 5px 20px rgba(0, 229, 255, 0.35);
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    will-change: transform;
+}
+
+.home-button:hover {
+    background: linear-gradient(135deg, #00e5ff, #0088ff);
+    box-shadow: 0 8px 30px rgba(0, 229, 255, 0.65);
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 50px;
+    padding: 30px;
+    text-align: center;
+    background: #050914;
+    border-top: 2px solid #00e5ff;
+}
+
+footer p {
+    color: #7f8bad;
+}
+
+
+/* =========================
+   HR
+========================= */
+
+hr {
+    border: none;
+    height: 1px;
+    margin: 40px 0;
+    background: linear-gradient(to right, transparent, #00e5ff, transparent);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+    header {
+        padding: 30px 15px;
+    }
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    header nav a {
+        display: block;
+        margin: 7px 0;
+    }
+
+    main {
+        padding: 25px 12px;
+    }
+
+    section h2 {
+        font-size: 24px;
+    }
+
+    article {
+        padding: 18px;
+    }
+
+    article img {
+        width: 100%;
+        height: 230px;
+        margin: 8px 0;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th,
+    td {
+        padding: 9px;
+    }
+
+    .product-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .buy-button,
+    .details-button {
+        width: 100%;
+        text-align: center;
+    }
+
+    .home-button {
+        right: 12px;
+        bottom: 12px;
+        padding: 11px 16px;
+        font-size: 14px;
+    }
+
+    .survey-container {
+        padding: 20px;
+    }
+}
